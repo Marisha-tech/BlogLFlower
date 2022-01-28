@@ -1,0 +1,25 @@
+/*==============================Section post==============================*/
+.section-post {
+  margin-top: 50px;
+}
+/*==============================Tabs==============================*/
+.tabs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__section {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+/*==============================Card==============================*/
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+  margin-bottom: 25px;
+}
+
+
