@@ -1,0 +1,50 @@
+/*==============================Section skills==============================*/
+.skills {
+  margin-top: 50px;
+
+}
+
+.skills-stack {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  @media (max-width: 425px) {
+    grid-template-columns: 1fr;
+  }
+
+  &--horizontal {
+  }
+
+  &__power {
+    padding: 120px 80px;
+    background-color: var(--black-haze);
+    @media (max-width: 1024px) {
+      padding: 40px 20px;
+    }
+
+    &-title {
+      font-size: 30px !important;
+    }
+
+    &-list__item {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__other {
+    padding: 120px 80px;
+    @media (max-width: 1024px) {
+      padding: 40px 20px;
+    }
+
+    &--text {
+      padding: 70px;
+      background-color: rgba(0, 0, 0, .3);
+      color: #ffffff;
+      @media (max-width: 768px) {
+        padding: 20px;
+      }
+    }
+  }
+}
