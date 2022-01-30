@@ -7,10 +7,13 @@ import {DashboardPageComponent} from './dashboard-page/dashboard-page.component'
 import {CreatePageComponent} from './create-page/create-page.component';
 import {EditPageComponent} from './edit-page/edit-page.component';
 import { HeaderAdminComponent } from './shared/components/header-admin/header-admin.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   imports: [
     CommonModule,//CommonModule чтобы в админском модуле присутствовали все базовые директивы, пайпы и т.д.
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forChild([//RouterModule для того, чтобы использовать внутренние роуты
       {
         path: '', component: AdminLayoutComponent, children: [
@@ -30,7 +33,7 @@ import { HeaderAdminComponent } from './shared/components/header-admin/header-ad
     DashboardPageComponent,
     CreatePageComponent,
     EditPageComponent,
-    HeaderAdminComponent
+    HeaderAdminComponent,
   ],
 })
 export class AdminModule {
