@@ -6,6 +6,7 @@ import {LoginPageComponent} from './login-page/login-page.component';
 import {DashboardPageComponent} from './dashboard-page/dashboard-page.component';
 import {CreatePageComponent} from './create-page/create-page.component';
 import {EditPageComponent} from './edit-page/edit-page.component';
+import { HeaderAdminComponent } from './shared/components/header-admin/header-admin.component';
 
 @NgModule({
   imports: [
@@ -20,7 +21,7 @@ import {EditPageComponent} from './edit-page/edit-page.component';
           {path: 'post/:id/edit', component: EditPageComponent}
         ]
       }
-    ])
+    ]),
   ],
   exports: [RouterModule],
   declarations: [
@@ -28,7 +29,8 @@ import {EditPageComponent} from './edit-page/edit-page.component';
     LoginPageComponent,
     DashboardPageComponent,
     CreatePageComponent,
-    EditPageComponent
+    EditPageComponent,
+    HeaderAdminComponent
   ],
 })
 export class AdminModule {
