@@ -3,8 +3,7 @@ import {PreloadAllModules, RouterModule, Routes} from '@angular/router';
 import {MainLayoutComponent} from "./shared/components/main-layout/main-layout.component";
 import {HomePageComponent} from "./home-page/home-page.component";
 import {PostPageComponent} from "./post-page/post-page.component";
-import {AdminModule} from "./admin/admin.module";
-import {SkillSectionComponent} from "./shared/sections/skill-section/skill-section.component";
+import {SkillSectionComponent} from "./shared/components/sections/skill-section/skill-section.component";
 
 const routes: Routes = [
   {
