@@ -1,0 +1,28 @@
+<header class="header-admin">
+  <div class="container-fluid">
+    <div class="header-top">
+      <h1><a href="/">Админка</a></h1>
+
+      <div class="header-menu">
+        <nav class="main-nav" aria-label="Main">
+          <ul class="main-nav__list">
+            <li class="main-nav__item" routerLinkActive="active">
+              <a [routerLink]="['/admin', 'dashboard']" class="main-nav__link">Главная</a>
+            </li>
+            <li class="main-nav__item" routerLinkActive="active">
+              <a [routerLink]="['/admin', 'create']" class="main-nav__link">Создать пост</a>
+            </li>
+            <li class="main-nav__item">
+              <a href="#" (click)="logout($event)" class="main-nav__link">Выйти</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <!-- /.header-menu -->
+    </div>
+  </div>
+  <!-- /.container-fluid -->
+</header>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
