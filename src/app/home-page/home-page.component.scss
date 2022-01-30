@@ -13,13 +13,22 @@
     flex-wrap: wrap;
   }
 }
+.mat-typography {
+  font: 400 16px/20px Roboto, "Helvetica Neue", sans-serif !important;
+}
 /*==============================Card==============================*/
 
 .card {
   display: flex;
   flex-direction: column;
-  width: 33%;
-  margin-bottom: 25px;
+  width: 32%;
+  margin: 2% 2% 2% 0;
+  //margin-bottom: 3%;
+  //margin-right: 1%;
+}
+.card:nth-child(3n) {
+  margin-right: 0;
+
 }
 
 
