@@ -1,6 +1,9 @@
 <div class="container">
   <form class="form" [formGroup]="form" (ngSubmit)="submit()">
     <h2>Войти в панель администратора</h2>
+    <div class="alert alert-danger" *ngIf="auth.error$ | async as error">
+      {{ error }}
+    </div>
 
     <div
       class="form-control"
@@ -38,7 +41,7 @@
 
     <button
       class="btn btn-primary" type="submit"
-      [disabled]="form.invalid"
+      [disabled]="form.invalid || submitted"
     >Войти
     </button>
   </form>
