@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {User} from "../../shared/interfaces";
 import {AuthService} from "../shared/services/auth.service";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Params, Router} from "@angular/router";
 
 @Component({
   selector: 'app-login-page',
@@ -13,14 +13,22 @@ export class LoginPageComponent implements OnInit {
 
   form: FormGroup | any
   submitted = false // блокировка кнопки войти (исключить нажатие несколько раз)
+  message: string = '' // для вывода сообщения в случае, если в адресной строке ?loginAgain
 
   constructor(
     public auth: AuthService,//будет ипользоваться в шаблоне
-    private router: Router //для редиректа
+    private router: Router, //для редиректа
+    private route: ActivatedRoute, //текущий роут
   ) {
   }
 
   ngOnInit(): void {
+    this.route.queryParams.subscribe((params: Params) => {
+      if (params['loginAgain']) {
+        this.message = 'Пожалуйста, авторизуйтесь'
+      }
+    })
+
     this.form = new FormGroup({
       email: new FormControl(null, [Validators.required, Validators.email]),
       password: new FormControl(null, [Validators.required, Validators.minLength(6)])
