@@ -3,7 +3,7 @@
     <div class="header-top">
       <h1><a href="/">Админка</a></h1>
 
-      <div class="header-menu">
+      <div class="header-menu" *ngIf="auth.isAuthenticated()">
         <nav class="main-nav" aria-label="Main">
           <ul class="main-nav__list">
             <li class="main-nav__item" routerLinkActive="active">
