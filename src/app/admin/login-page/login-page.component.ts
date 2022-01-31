@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {User} from "../../shared/interfaces";
+import {AuthService} from "../shared/services/auth.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login-page',
@@ -10,8 +12,13 @@ import {User} from "../../shared/interfaces";
 export class LoginPageComponent implements OnInit {
 
   form: FormGroup | any
+  submitted = false // блокировка кнопки войти (исключить нажатие несколько раз)
 
-  constructor() { }
+  constructor(
+    public auth: AuthService,//будет ипользоваться в шаблоне
+    private router: Router //для редиректа
+  ) {
+  }
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -25,13 +32,20 @@ export class LoginPageComponent implements OnInit {
     if (this.form.invalid) {
       return
     }
-    // console.log(this.form)
-    // const formData = {...this.form.value}
-    // console.log('Form data', formData)
 
+    this.submitted = true
+    // console.log(this.form)
     const user: User = {
       email: this.form.value.email,
       password: this.form.value.password,
     }
+
+    this.auth.login(user).subscribe(() => {
+      this.form.reset()
+      this.router.navigate(['/admin', 'dashboard']) //если авторизация прошла успешно, тогда сделать редирект на страницу admin/dashboard
+      this.submitted = false
+    }, () => {
+      this.submitted = false
+    })
   }
 }
