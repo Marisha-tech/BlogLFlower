@@ -7,6 +7,7 @@ import {Environment} from "./interface";
 export const environment: Environment = {
   production: false,
   apiKey: "AIzaSyDsHGyold-FoE5UkTGlHDtduPCXwc7jrSA",
+  fbDbUrl: 'https://bloglflower-default-rtdb.firebaseio.com',
 };
 
 /*
