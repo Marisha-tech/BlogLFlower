@@ -16,6 +16,7 @@ import { PostComponent } from './shared/components/post/post.component';
 import { HeaderMainComponent } from './shared/components/headers/header-main/header-main.component';
 import {HeaderComponent} from "./shared/components/headers/header/header.component";
 import { FooterComponent } from './shared/components/footers/footer/footer.component';
+import {SharedModule} from "./shared/shared.module";
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { FooterComponent } from './shared/components/footers/footer/footer.compo
   imports: [
     BrowserModule,
     AppRoutingModule,
+    SharedModule,
     BrowserAnimationsModule,
     MatSliderModule,
     MatTabsModule,
