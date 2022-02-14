@@ -1,4 +1,4 @@
-import {NgModule} from '@angular/core';
+import {NgModule, Provider} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 
 import {AppRoutingModule} from './app-routing.module';
@@ -17,7 +17,14 @@ import { HeaderMainComponent } from './shared/components/headers/header-main/hea
 import {HeaderComponent} from "./shared/components/headers/header/header.component";
 import { FooterComponent } from './shared/components/footers/footer/footer.component';
 import {SharedModule} from "./shared/shared.module";
+import {HTTP_INTERCEPTORS} from "@angular/common/http";
+import {AuthInterceptor} from "./shared/auth.interceptor";
 
+const INTERCEPTOR_PROVIDER: Provider = {
+  provide: HTTP_INTERCEPTORS,
+  multi: true, // чтобы не перетирались интерсепторы и чтобы при добавлении еще одного интерсептора он был добавлен последовательно
+  useClass: AuthInterceptor,
+}
 
 @NgModule({
   declarations: [
@@ -42,7 +49,7 @@ import {SharedModule} from "./shared/shared.module";
     // MatMenuTrigger,
 
   ],
-  providers: [],
+  providers: [INTERCEPTOR_PROVIDER],
   exports: [
   ],
   bootstrap: [AppComponent]
