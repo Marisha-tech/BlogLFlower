@@ -9,7 +9,7 @@ import {DashboardPageComponent} from './dashboard-page/dashboard-page.component'
 import {CreatePageComponent} from './create-page/create-page.component';
 import {EditPageComponent} from './edit-page/edit-page.component';
 import { HeaderAdminComponent } from './shared/components/header-admin/header-admin.component';
-import {AuthService} from "./shared/services/auth.service";
+// import {AuthService} from "./shared/services/auth.service";
 import {SharedModule} from "../shared/shared.module";
 import {AuthGuard} from "./shared/services/auth.guard";
 
@@ -40,7 +40,7 @@ import {AuthGuard} from "./shared/services/auth.guard";
     EditPageComponent,
     HeaderAdminComponent,
   ],
-  providers: [AuthService, AuthGuard]
+  providers: [AuthGuard]
 })
 export class AdminModule {
 
