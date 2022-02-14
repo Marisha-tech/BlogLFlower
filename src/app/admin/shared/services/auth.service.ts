@@ -9,7 +9,7 @@ import {environment} from "../../../../environments/environment";
 import {catchError, tap} from "rxjs/operators";
 
 // {providedIn: "root"} - не нужно, тк авторизация не нужна в главном модуле
-@Injectable()
+@Injectable({providedIn: 'root'})
 
 export class AuthService {
 
