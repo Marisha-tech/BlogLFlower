@@ -7,10 +7,10 @@ import {map} from "rxjs/operators";
 
 @Injectable({providedIn: "root"})
 export class PostsServices {
+  //тк работа с бэком, то нужно подключить HttpClient
   constructor(private http: HttpClient) {
   }
 
-  //метод для создания поста
   create(post: Post): Observable<Post> {
     return this.http.post(`${environment.fbDbUrl}/posts.json`, post)
       .pipe(map((response: FbCreateResponse) => {
@@ -22,7 +22,6 @@ export class PostsServices {
       }))
   }
 
-  //получение всех постов
   getAll(): Observable<Post[]> {
     return this.http.get(`${environment.fbDbUrl}/posts.json`)
       .pipe(map((response:{[key: string]: any}) => {
@@ -36,8 +35,25 @@ export class PostsServices {
       }))
   }
 
-  //удаление поста
+  //выполнить запрос к БД, чтобы получить отдельный пост
+  getById(id: string):Observable<Post> {
+    return this.http.get<Post>(`${environment.fbDbUrl}/posts/${id}.json`)
+      //необходимо распарсить объект, чтбы получить отдельный элемент поста
+      .pipe(map((post: Post) => {
+        return {
+          ...post,
+          id,
+          date: new Date(post.date)
+        }
+      }))
+  }
+
   remove(id: string): Observable<void>{
     return this.http.delete<void>(`${environment.fbDbUrl}/posts/${id}.json`)
+  }
+
+  update(post: Post): Observable<Post> {
+    //patch() позволяет частично обновлять данные
+    return this.http.patch<Post>(`${environment.fbDbUrl}/posts/${post.id}.json`, post)
   }
 }
