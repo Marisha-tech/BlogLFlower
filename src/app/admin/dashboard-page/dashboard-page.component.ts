@@ -3,6 +3,7 @@ import {AuthService} from "../shared/services/auth.service";
 import {PostsServices} from "../../shared/posts.services";
 import {Post} from "../../shared/interfaces";
 import {Subscription} from "rxjs";
+import {AlertService} from "../shared/services/alert.service";
 
 @Component({
   selector: 'app-dashboard-page',
@@ -19,6 +20,7 @@ export class DashboardPageComponent implements OnInit, OnDestroy {
   constructor(
     private auth: AuthService,
     private postsService: PostsServices,
+    private alert: AlertService,
   ) {
   }
 
@@ -46,6 +48,7 @@ export class DashboardPageComponent implements OnInit, OnDestroy {
   remove(id: any) {
     this.dSub = this.postsService.remove(id).subscribe(() => {
       this.posts = this.posts.filter(post => post.id !== id)
+      this.alert.warning('Пост удален')
     })
   }
 }
