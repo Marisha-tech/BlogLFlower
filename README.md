@@ -37,3 +37,46 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 <p>
 <b>СОВЕТ:</b> Если вы используете модули с отложенной загрузкой, вам нужно добавить QuillModule.forRoot()их к импорту в корневом модуле, чтобы убедиться, что Config сервисы зарегистрированы.</p>
+
+## Добавление PWA
+<ol>
+<li>Остановить выполнение проекта (ctrl+C)</li>
+<li>Запустить установку ng add @angular/pwa, подтвердить выполнение
+<p>Появятся файлы (manifest.webmanifest, ngsw-config.json)</p>
+<p>В src\app\app.module.ts появляется ServiceWorkerModule, который регистрируется в imports</p>
+</li>
+<li>Отредактировать ngsw-config.json:
+<p>Закэшировать шрифты:</p>
+<p>
+<code> "files": [<br>
+                "/favicon.ico",<br>
+                "/index.html",<br>
+                "/manifest.webmanifest",<br>
+                "/*.css",<br>
+                "/*.js"<br>
+              ],<br>
+              "urls": [<br>
+                "https://fonts.googleapis.com/css?family=Roboto"<br>
+              ]</code>
+</p>
+<p>На уровне "assetGroups" создать "dataGroups":</p>
+<code>
+  "dataGroups": [<br>
+    {<br>
+      "name": "firebase-posts",<br>
+      "urls": [<br>
+        "https://angularblogtest-1b8f2-default-rtdb.firebaseio.com/**"<br>
+      ],<br>
+      "cacheConfig": {<br>
+        "maxSize": 5,<br>
+        "maxAge": "3600"<br>
+      }<br>
+    }<br>
+  ]
+</code>
+</li>
+<li>Сделать production сборку<br>
+<code>ng build --prod</code>
+</li>
+<li>После чего в корне создалась папка dist </li>
+</ol>
