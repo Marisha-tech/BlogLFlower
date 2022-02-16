@@ -1,25 +1,26 @@
 <app-header></app-header>
 
 <div class="container">
-  <article class="card">
+  <article
+    *ngIf="post$ | async as post; else loading"
+    class="card"
+  >
     <aside class="card__aside">
       <figure class="card__figure">
         <!--      <img src="assets/images/1.png" alt="Dummy Image" class="card__image">-->
       </figure>
     </aside>
     <header class="card__header">
-      <h1 class="card__title">Залоговок поста</h1>
+      <h1 class="card__title">{{ post.title }}</h1>
       <strong class="card__subtitle">
-        Автор поста
+        {{ post.author }}
       </strong><br>
-      <small>28.01.2022</small>
+      <small>{{ post.date | date:'medium':'':'ru' }}</small>
     </header>
     <div class="card__body">
+      <quill-view-html [content]="post.text"></quill-view-html>
       <p class="card__copy">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis sint perspiciatis
-        deleniti ab possimus ut? Ducimus fugiat hic velit necessitatibus. Lorem ipsum dolor
-        sit amet consectetur adipisicing elit. Repellendus sapiente harum soluta excepturi ut
-        temporibus, at amet corporis id asperiores.
+
       </p>
     </div>
     <footer class="card__footer">
@@ -33,4 +34,7 @@
       </div>
     </footer>
   </article>
+  <ng-template #loading>
+    <p class="text-center">Загрузка поста...</p>
+  </ng-template>
 </div>
