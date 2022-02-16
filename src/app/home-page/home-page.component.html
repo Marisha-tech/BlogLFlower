@@ -7,12 +7,11 @@
       <!--        <div class="tabs__link">-->
       <mat-tab label="Комнатные растения">
         <!--        <div class="tabs__section">-->
-        <div
-          style="display:flex; flex-wrap: wrap; "
+        <div class="tabs__section"
           *ngIf="posts$ | async as posts; else loading"
         >
-          <app-post
-            style="display:flex;flex-direction: column; width: 23%; margin: 1% 0 1% 1% ; padding: 20px; border: 1px solid var(--mercury);"
+          <app-post class="card"
+            style=""
             *ngFor="let post of $any(posts)"
             [post]="post"
           ></app-post>
