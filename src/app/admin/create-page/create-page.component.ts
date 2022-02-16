@@ -24,6 +24,7 @@ export class CreatePageComponent implements OnInit {
       title: new FormControl(null, Validators.required),
       text: new FormControl(null, Validators.required),
       author: new FormControl(null, Validators.required),
+      img: new FormControl(null),
     })
   }
 
@@ -36,7 +37,8 @@ export class CreatePageComponent implements OnInit {
       title: this.form.value.title,
       text: this.form.value.text,
       author: this.form.value.author,
-      date: new Date()
+      date: new Date(),
+      img: this.form.value.img,
     }
 
     this.postsService.create(post).subscribe(() => {
