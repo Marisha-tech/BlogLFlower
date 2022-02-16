@@ -3,7 +3,10 @@
   <figure class="card__figure">
 <!--          <img src="assets/images/1.png" alt="Dummy Image" class="card__image">-->
     <div *ngIf="post.img; else hasPhoto">
-      <div class="card__image" [innerHTML]="post.img"></div>
+      <div class="card__image">
+        <quill-view-html [content]="post.img"></quill-view-html>
+
+      </div>
     </div>
   </figure>
 </aside>
@@ -15,13 +18,15 @@
   <small>{{ post.date | date:'dd.MM.yyyy' }}</small>
 </header>
 <div class="card__body">
-  <div class="card__copy" [innerHTML]="post.text.substring(0, 280)"></div>
+  <div class="card__copy">
+    <quill-view-html [content]="post.text.substring(0, 250)"></quill-view-html>
+  </div>
 </div>
 <footer class="card__footer">
   <div class="card__actions">
     <button
       [routerLink]="['/post', post.id]"
-      class="btn btn-primary"
+      class="btn btn-primary card__open"
     >
       Открыть
     </button>
@@ -29,6 +34,8 @@
 </footer>
 </article>
 <ng-template #hasPhoto>
-  <img src="../../../../assets/images/no-photo.svg" alt="no photo" width="100" height="100">
+  <div class="ql-editor">
+    <img class="card__image" src="../../../../assets/images/no-photo.svg" alt="no photo" width="175" height="175">
+  </div>
 </ng-template>
 
