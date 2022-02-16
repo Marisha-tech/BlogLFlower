@@ -82,31 +82,28 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 </ol>
 
 ## Деплой приложения
-Зайти в firebase -> hoisting -> начать<br>
-Установить firebase-tools<br>
-npm install -g firebase-tools<br>
-После установки пакета возвращаемся в firebase, нажимаем далее<br>
-firebase login<br>
-Если не было аккаунта, то откроется вкладка браузера, где можно выбрать аккаунт<br>
-firebase init<br>
-Обязательно нужно находиться в корневой папке (cd.. - выйти из папки)<br>
-
- Are you ready to proceed? (Y/n) Y<br>
-Выбрать Hoisting c FireBase (выбрать пробелом -> enter)<br>
-Какой проект используем?<br>
-Use an existing project<br>
-
-Выбрать проект
-What do you want to use as your public directory? Какая директория является публичной? dist/AngularBlogTest<br>
-Configure as a single-page app (rewrite all urls to /index.html)? Необходимо ли конфигурировать данное приложение как single page application? - Y<br>
-Set up automatic builds and deploys with GitHub? Настроить автоматические сборки и развертывания с помощью GitHub? - y<br>
-For which GitHub repository would you like to set up a GitHub workflow? (format: user/repository) Marisha-tech/BlogLFlower<br>
-Set up the workflow to run a build script before every deploy? (y/N) - y<br>
-File dist/AngularBlogTest/index.html already exists. Overwrite? - n<br>
-firebase deploy<br>
-
-После чего в консоло сообщение Firebase initialization complete!<br>
-В корне приложения появляются файлы .firebaserc, firebase.json<br>
-
-Переходим в firebase нажимаем далее<br>
-В консоли написать <code>firebase deploy</code><br>
+<ol>
+<li>Зайти в firebase -> hoisting -> начать</li>
+<li>Установить firebase-tools
+<code>npm install -g firebase-tools</code></li>
+<li>После установки пакета возвращаемся в firebase, нажимаем далее</li>
+<li><code>firebase login</code></li>
+<li>Если не было аккаунта, то откроется вкладка браузера, где можно выбрать аккаунт</li>
+<li><code>firebase init</code></li>
+<li>!!!!!!!!!Обязательно нужно находиться в корневой папке (cd.. - выйти из папки)</li>
+<li>Are you ready to proceed? (Y/n) Y</li>
+<li>Выбрать Hoisting c FireBase (выбрать пробелом -> enter)</li>
+<li>Use an existing project Какой проект используем?</li>
+<li>Выбрать пр</li>
+<li>What do you want to use as your public directory? Какая директория является публичной? dist/AngularBlogTest</li>
+<li>Configure as a single-page app (rewrite all urls to /index.html)? Необходимо ли конфигурировать данное приложение как single page application? - Y</li>
+<li>Set up automatic builds and deploys with GitHub? Настроить автоматические сборки и развертывания с помощью GitHub? - y</li>
+<li>For which GitHub repository would you like to set up a GitHub workflow? (format: user/repository) Marisha-tech/BlogLFlower</li>
+<li>Set up the workflow to run a build script before every deploy? (y/N) - y</li>
+<li>File dist/AngularBlogTest/index.html already exists. Overwrite? - n</li>
+<li><code>firebase deploy</code></li>
+<li>После чего в консоло сообщение Firebase initialization complete!<br>
+В корне приложения появляются файлы .firebaserc, firebase.json</li>
+<li>Переходим в firebase нажимаем далее</li>
+<li>В консоли написать <code>firebase deploy</code></li>
+</ol>
