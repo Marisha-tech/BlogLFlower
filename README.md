@@ -1,17 +1,36 @@
 # BlogLFlower
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.10.
+<p>BlogLFlower - информационый сайт о растениеводстве</p>
+<p>Проект создан с помощью Angular CLI версии 12.2.10</p>
+Используются:
+<ol> 
+<li>AngularMaterial</li>
+<li>плагин редактора quill</li>
+<li>firebase</li>
+</ol>
+
+<p>Проект: https://bloglflower.web.app/</p>
+<p>Админка: https://bloglflower.web.app/admin</p>
+
+<ol>
+<li>В публичной части размещен список постов о растениях. В необходимый пост можно перейти по кнопке "Открыть"</li>
+<li>В административной части сайта существует возможность создавать/редактировать/удалять посты.
+БД подключена с использованием firebase с помощью методов, которые позволяют работать с firebase как c RestAPI (набор URL, к которым идет обращение и получение данных)</li>
+<li>Деплой приложения осуществлен с помощью firebase</li>
+</ol>
+
+
 
 ### Languages and Tools
 ![Angular](https://img.shields.io/badge/-Angular-090909?style=for-the-badge&logo=Angular)
 ![HTML](https://img.shields.io/badge/-HTML5-090909?style=for-the-badge&logo=HTML5)
 ![CSS](https://img.shields.io/badge/-CSS-090909?style=for-the-badge&logo=CSS3)
-![JavaScript](https://img.shields.io/badge/-JS-090909?style=for-the-badge&logo=JavaScript)
+![TypeScript](https://img.shields.io/badge/-TypeScript-090909?style=for-the-badge&logo=TypeScript)
 ![AngularMaterial](https://img.shields.io/badge/-AngularMaterial-090909?style=for-the-badge&logo=AngularMaterial)
 
-## Подключение плагина редактора
+## Подключение плагина редактора (quill)
 <a href="https://www.npmjs.com/package/ngx-quill">https://www.npmjs.com/package/ngx-quill
-<ul>
+<ol>
 <li>
 <code>npm i ngx-quill</code>
 </li>
@@ -33,7 +52,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
     @ import  '~quill/dist/quill.snow.css' ;
 </code>
 </li>
-</ul>
+</ol>
 
 <p>
 <b>СОВЕТ:</b> Если вы используете модули с отложенной загрузкой, вам нужно добавить QuillModule.forRoot()их к импорту в корневом модуле, чтобы убедиться, что Config сервисы зарегистрированы.</p>
