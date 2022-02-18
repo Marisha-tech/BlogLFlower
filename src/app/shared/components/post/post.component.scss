@@ -4,7 +4,7 @@
   //width: 50%;
   &__open {
     position: absolute;
-    bottom: 4%;
+    bottom: 2%;
     left: 5%;
   }
 
@@ -26,6 +26,9 @@
   }
 
   &__subtitle {
+    @media (max-width: 425px) {
+      display: none;
+    }
   }
 
   &__body {
@@ -43,5 +46,11 @@
   &__actions {
   }
 }
+@media (max-width: 425px) {
+  small{
+    display: none;
+  }
+}
+
 
 
