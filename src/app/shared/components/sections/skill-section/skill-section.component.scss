@@ -33,13 +33,13 @@
   }
 
   &__other {
-    padding: 120px 80px;
+    //padding: 120px 80px;
     @media (max-width: 1024px) {
-      padding: 40px 20px;
+      //padding: 40px 20px;
     }
 
     &--text {
-      padding: 70px;
+      padding: 50px;
       background-color: rgba(0, 0, 0, .3);
       color: #ffffff;
       @media (max-width: 768px) {
