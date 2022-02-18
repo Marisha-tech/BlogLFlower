@@ -5,9 +5,9 @@
     <!--    <div class="tabs__list">-->
     <mat-tab-group dynamicHeight>
       <!--        <div class="tabs__link">-->
-      <mat-tab label="Комнатные растения">
+      <mat-tab label="Комнатные растения" >
         <!--        <div class="tabs__section">-->
-        <div class="tabs__section"
+        <div id="tab1" class="tabs__section"
           *ngIf="posts$ | async as posts; else loading"
         >
           <app-post class="card"
@@ -21,14 +21,14 @@
       <!--        </div>-->
       <div class="tabs__link">
         <mat-tab label="Огород на подоконнике">
-          <div class="tabs__section">
+          <div id="tab2" class="tabs__section">
             Огород на подоконнике
           </div>
         </mat-tab>
       </div>
       <div class="tabs-link">
         <mat-tab label="Пересадка">
-          <div class="tabs__section">
+          <div id="tab3" class="tabs__section">
             Пересадка
           </div>
         </mat-tab>
@@ -36,12 +36,14 @@
     </mat-tab-group>
     <!--    </div>-->
     <!--  </div>-->
+    <ng-template #loading>
+      <div class="text-center">Загрузка постов...</div>
+    </ng-template>
   </div>
-  <ng-template #loading>
-    <p class="text-center">Загрузка постов...</p>
-  </ng-template>
 </section>
 <!-- /.section-post -->
+
+
 
 <section class="section-skill">
   <app-skill-section></app-skill-section>
