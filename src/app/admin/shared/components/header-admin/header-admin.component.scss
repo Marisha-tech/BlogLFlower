@@ -1,8 +1,18 @@
-.header-admin{
+.header-admin {
   background-color: var(--acapulco);
   margin-bottom: 25px;
+
+  &__title {
+    color: var(--white);
+  }
 }
 
-.active{
+.active {
   font-weight: 700;
+}
+
+.main-nav {
+  &__link {
+    color: var(--white);
+  }
 }
