@@ -15,6 +15,7 @@ import {AuthGuard} from "./shared/services/auth.guard";
 import {SearchPipe} from "./shared/search.pipe";
 import { AlertComponent } from './shared/components/alert/alert.component';
 import {AlertService} from "./shared/services/alert.service";
+import { FooterComponent } from './shared/components/footer/footer.component';
 
 @NgModule({
   imports: [
@@ -44,6 +45,7 @@ import {AlertService} from "./shared/services/alert.service";
     HeaderAdminComponent,
     SearchPipe,
     AlertComponent,
+    FooterComponent,
   ],
   providers: [AuthGuard, AlertService]
 })
