@@ -81,6 +81,9 @@ h2 {
   font-family: 'Montserrat', sans-serif;
   font-size: 32px;
   padding-bottom: 15px;
+  @media (max-width: 425px) {
+    padding-bottom: 5px;
+  }
 }
 
 h3 {
@@ -139,7 +142,7 @@ h4 {
 }
 
 .alert-success {
-  background: var(--success-color);
+  background: var(--acapulco);
   color: #fff;
 }
 
@@ -149,7 +152,14 @@ h4 {
 }
 
 .text-center {
+  //display: flex;
+  //align-items: center;
+  //justify-content: center;
   text-align: center;
+  background-color: var(--wild-sand);
+  padding: 10px 0;
+  margin: 50px auto;
+  width: 100%;
 }
 
 .container {
@@ -157,6 +167,7 @@ h4 {
   margin: auto;
   overflow: hidden;
   padding: 0 2rem;
+  min-height: calc(100vh - 260px);
 }
 
 .container-fluid {
@@ -165,6 +176,10 @@ h4 {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+}
+
+.container-footer {
+  min-height: calc(100vh - 145px);
 }
 
 /*==============================Material==============================*/
@@ -210,10 +225,12 @@ h4 {
 }
 
 .mat-typography h1 {
+  font-family: "Nunito Sans", sans-serif;
   font-size: 30px;
   font-weight: 400;
   letter-spacing: normal;
   margin: 0;
+  padding-bottom: 10px;
 }
 
 .mat-typography h2 {
@@ -221,6 +238,10 @@ h4 {
   font-weight: 400;
   letter-spacing: normal;
   margin: 0 0 16px;
+  @media (max-width: 425px) {
+    font-size: 18px;
+  }
+
 }
 
 @media (max-width: 1024px) {
@@ -240,6 +261,10 @@ h4 {
     justify-content: space-between;
     align-items: center;
     padding: 15px 0;
+    margin-bottom: 20px;
+    @media (max-width: 768px) {
+      align-items: flex-start;
+    }
   }
 
   &-logo {
@@ -253,8 +278,10 @@ h4 {
   &-main {
     height: 100vh;
     min-height: 700px;
-    //position: relative;
-    //letter-spacing: 2px;
+    @media (max-width: 425px) {
+      height: 50vh;
+      min-height: 350px;
+    }
   }
 }
 
@@ -265,15 +292,22 @@ h4 {
     display: flex;
     justify-content: center;
     align-items: center;
-    //font-size: 12px;
     text-transform: uppercase;
     color: var(--dark-color);
-    //font-weight: 600;
-    //letter-spacing: 2px;
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: baseline;
+    }
+    @media (max-width: 375px) {
+      font-size: 14px;
+    }
   }
 
   &__item {
     margin: 0 15px;
+    @media (max-width: 768px) {
+      margin: 5px 10px;
+    }
   }
 
   &__link {
