@@ -1,0 +1,7 @@
+.header-other {
+  background-color: var(--wild-sand);
+  margin-bottom: 20px;
+  @media (max-width: 768px) {
+    padding: 15px 0;
+  }
+}
