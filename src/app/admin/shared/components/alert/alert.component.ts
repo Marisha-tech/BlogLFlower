@@ -11,7 +11,7 @@ export class AlertComponent implements OnInit, OnDestroy {
 
   @Input() delay = 5000
 
-  public text: string | any
+  public text?: string
   public type = 'success'
 
   aSub: Subscription | any
