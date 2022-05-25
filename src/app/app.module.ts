@@ -23,6 +23,7 @@ import {FooterComponent} from './shared/components/footers/footer/footer.compone
 import {SharedModule} from "./shared/shared.module";
 import {AuthInterceptor} from "./shared/auth.interceptor";
 import {environment} from '../environments/environment';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 //локализация для вывода даты на русском
 registerLocaleData(ruLocale, 'ru')
@@ -44,6 +45,7 @@ const INTERCEPTOR_PROVIDER: Provider = {
     HeaderMainComponent,
     HeaderComponent,
     FooterComponent,
+    ErrorPageComponent,
   ],
   imports: [
     BrowserModule,
