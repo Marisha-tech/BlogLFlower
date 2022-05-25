@@ -4,6 +4,7 @@ import {MainLayoutComponent} from "./shared/components/main-layout/main-layout.c
 import {HomePageComponent} from "./home-page/home-page.component";
 import {PostPageComponent} from "./post-page/post-page.component";
 import {SkillSectionComponent} from "./shared/components/sections/skill-section/skill-section.component";
+import {ErrorPageComponent} from "./error-page/error-page.component";
 
 const routes: Routes = [
   {
@@ -11,7 +12,9 @@ const routes: Routes = [
       {path: '', redirectTo: '/', pathMatch: 'full'},//для редиректа
       {path: '', component: HomePageComponent},
       {path: '', component: SkillSectionComponent},
-      {path: 'post/:id', component: PostPageComponent}
+      {path: 'post/:id', component: PostPageComponent},
+      {path: 'error', component: ErrorPageComponent},
+      {path: '**', redirectTo: '/error'},
     ]
   },
   {
