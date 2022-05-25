@@ -20,6 +20,13 @@
       </mat-tab>
       <!--        </div>-->
       <div class="tabs__link">
+        <mat-tab *ngFor="let menuItem of menu" label=" {{menuItem.name}} ">
+          <div id="{{menuItem.id}}" class="tabs__section">
+            {{menuItem.name}}
+          </div>
+        </mat-tab>
+      </div>
+     <!-- <div class="tabs__link">
         <mat-tab label="Огород на подоконнике">
           <div id="tab2" class="tabs__section">
             Огород на подоконнике
@@ -32,7 +39,7 @@
             Пересадка
           </div>
         </mat-tab>
-      </div>
+      </div>-->
     </mat-tab-group>
     <!--    </div>-->
     <!--  </div>-->

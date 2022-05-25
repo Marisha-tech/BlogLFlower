@@ -30,23 +30,26 @@
       <div class="footer__column">
         <h4 class="footer__title">Темы</h4>
         <ul class="footer-list">
-          <li class="footer-list__item">
-            <a class="footer-list__link" href="#">Главная</a>
+          <li class="footer-list__item" *ngFor="let menuItem of menu">
+            <a class="footer-list__link" href=" {{ menuItem.href }} "> {{ menuItem.name }}</a>
           </li>
-          <li class="footer-list__item">
-            <a class="footer-list__link" href="#tab1">Комнатные растения</a>
-          </li>
-          <li class="footer-list__item">
-            <a class="footer-list__link" href="#tab1">Огород на подоконнике</a>
-            <!--            <ul class="footer-list list&#45;&#45;second">-->
-            <!--              <li class="footer-list__item list__item&#45;&#45;second">Огурцы</li>-->
-            <!--              <li class="footer-list__item list__item&#45;&#45;second">Пряные травы и зелень</li>-->
-            <!--              <li class="footer-list__item list__item&#45;&#45;second">Томат</li>-->
-            <!--            </ul>-->
-          </li>
-          <li class="list__item">
-            <a class="footer-list__link" href="#tab1">Пересадка</a>
-          </li>
+<!--          <li class="footer-list__item">-->
+<!--            <a class="footer-list__link" href="#">Главная</a>-->
+<!--          </li>-->
+<!--          <li class="footer-list__item">-->
+<!--            <a class="footer-list__link" href="#tab1">Комнатные растения</a>-->
+<!--          </li>-->
+<!--          <li class="footer-list__item">-->
+<!--            <a class="footer-list__link" href="#tab1">Огород на подоконнике</a>-->
+<!--            &lt;!&ndash;            <ul class="footer-list list&#45;&#45;second">&ndash;&gt;-->
+<!--            &lt;!&ndash;              <li class="footer-list__item list__item&#45;&#45;second">Огурцы</li>&ndash;&gt;-->
+<!--            &lt;!&ndash;              <li class="footer-list__item list__item&#45;&#45;second">Пряные травы и зелень</li>&ndash;&gt;-->
+<!--            &lt;!&ndash;              <li class="footer-list__item list__item&#45;&#45;second">Томат</li>&ndash;&gt;-->
+<!--            &lt;!&ndash;            </ul>&ndash;&gt;-->
+<!--          </li>-->
+<!--          <li class="list__item">-->
+<!--            <a class="footer-list__link" href="#tab1">Пересадка</a>-->
+<!--          </li>-->
         </ul>
       </div>
     </div>

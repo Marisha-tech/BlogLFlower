@@ -1,3 +1,11 @@
+export interface MenuMain {
+  name: string,
+  url?: string,
+  href?: string,
+  id?: string
+}
+
+
 export interface User {
   email: string
   password: string
