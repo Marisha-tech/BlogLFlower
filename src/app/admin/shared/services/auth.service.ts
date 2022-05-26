@@ -7,6 +7,7 @@ import {HttpClient, HttpErrorResponse} from "@angular/common/http";
 import {Observable, Subject, throwError} from "rxjs";
 import {environment} from "../../../../environments/environment";
 import {catchError, tap} from "rxjs/operators";
+import {MessageError} from "../message-error";
 
 // {providedIn: "root"} - не нужно, тк авторизация не нужна в главном модуле
 @Injectable({providedIn: 'root'})
@@ -48,15 +49,14 @@ export class AuthService {
   private handleError(error: HttpErrorResponse): any {
     const {message} = error.error.error
 
-    // console.log(message)
     switch (message) {
-      case 'INVALID_PASSWORD':
+      case MessageError.INVALID_PASSWORD:
         this.error$.next('Неверный пароль')
         break
-      case 'INVALID_EMAIL':
+      case MessageError.INVALID_EMAIL:
         this.error$.next('Неверный email')
         break
-      case 'EMAIL_NOT_FOUND':
+      case MessageError.EMAIL_NOT_FOUND:
         this.error$.next('Email не найден')
         break
     }
