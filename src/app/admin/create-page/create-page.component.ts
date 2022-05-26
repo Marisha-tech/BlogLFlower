@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {Post} from "../../shared/interfaces";
 import {PostsServices} from "../../shared/posts.services";
 import {AlertService} from "../shared/services/alert.service";
@@ -15,16 +15,24 @@ export class CreatePageComponent implements OnInit {
 
   constructor(
     private postsService: PostsServices,
-    private alert: AlertService
+    private alert: AlertService,
+    private formBuilder: FormBuilder
   ) { }
 
   ngOnInit(): void {
     //инициализация формы
-    this.form = new FormGroup({
+    /*this.form = new FormGroup({
       title: new FormControl(null, Validators.required),
       text: new FormControl(null, Validators.required),
       author: new FormControl(null, Validators.required),
       img: new FormControl(null),
+    })*/
+
+    this.form = this.formBuilder.group({
+      title: [null, Validators.required],
+      text: [null, Validators.required],
+      author: [null, Validators.required],
+      img: [null]
     })
   }
 
