@@ -14,7 +14,7 @@ const routes: Routes = [
       {path: '', component: SkillSectionComponent},
       {path: 'post/:id', component: PostPageComponent},
       {path: 'error', component: ErrorPageComponent},
-      {path: '**', redirectTo: '/error'},
+      // {path: '**', redirectTo: '/error'},
     ]
   },
   {

@@ -3,12 +3,13 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {FbCreateResponse, Post} from "./interfaces";
 import {environment} from "../../environments/environment";
-import {map} from "rxjs/operators";
+import {map, tap} from "rxjs/operators";
+import {Router} from "@angular/router";
 
 @Injectable({providedIn: "root"})
 export class PostsServices {
   //тк работа с бэком, то нужно подключить HttpClient
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router) {
   }
 
   create(post: Post): Observable<Post> {
@@ -39,13 +40,23 @@ export class PostsServices {
   getById(id: string):Observable<Post> {
     return this.http.get<Post>(`${environment.fbDbUrl}/posts/${id}.json`)
       //необходимо распарсить объект, чтбы получить отдельный элемент поста
-      .pipe(map((post: Post) => {
-        return {
-          ...post,
-          id,
-          date: new Date(post.date)
-        }
-      }))
+      .pipe(
+        tap(post => {
+          //если будет запрошен несуществующий id поста
+          //TODO если Firebase ответит ошибкой?
+          if (post == null) {
+            this.router.navigate(['error'])
+          }
+        }),
+        map((post: Post) => {
+          return {
+            ...post,
+            id,
+            date: new Date(post.date)
+          }
+        })
+      )
+
   }
 
   remove(id: string): Observable<void>{
